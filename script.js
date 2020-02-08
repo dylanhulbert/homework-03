@@ -21,6 +21,11 @@ function PasswordCriteria() {
     return;
   }
 
+  if (isNaN(length) === true) {
+    alert("enter a number... try again");
+    return;
+  }
+
   var includeLowercase = confirm("lowercase?");
   var includeUppercase = confirm("uppercase?");
   var includeNumeric = confirm("numeric?");
@@ -36,7 +41,7 @@ function PasswordCriteria() {
   return passwordSelection
 }
 
-// console.log(passwordSelection)
+console.log()
 
 function generatePassword() {
   var passwordInputs = PasswordCriteria();
