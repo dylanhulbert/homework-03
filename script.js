@@ -5,10 +5,11 @@ var uppercase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P"
 var numeric = ["1","2","3","4","5","6","7","8","9","0"]
 var special = ["!","@","#","$","%","^","&","*","(",")"]
 
-
-// this function pulls together the selected password critera
+// funtion takes in password criteria
 function PasswordCriteria() {
-  var length = parseInt(prompt("length of the password: 8 - 128 characters?"));
+  var length = parseInt(
+    prompt("length of the password: 8 - 128 characters?")
+    );
 
   if (length < 8) {
     alert("must be 8 - 128 characters... try again");
@@ -29,27 +30,26 @@ function PasswordCriteria() {
     alert("you have to pick something... try again");
     return;
   }
-
-  var selectedCriteria = (length, includeLowercase, includeUppercase, includeNumeric, includeSpecial);
-
-  return selectedCriteria;
-
-
-
-
-
   
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
+  var passwordSelection = {length: length, includeLowercase: includeLowercase, includeUppercase: includeUppercase, includeNumeric: includeNumeric, includeSpecial: includeSpecial};
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
+  return passwordSelection
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+// console.log(passwordSelection)
+
+function generatePassword() {
+  var passwordInputs = PasswordCriteria();
+}
+
+// passwordInputs
+
+var generateBtn = document.querySelector('#generate');
+
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector('#password');
+  passwordText.value = password;
+}
+
+generateBtn.addEventListener('click', writePassword);
