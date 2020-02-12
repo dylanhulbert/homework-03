@@ -16,7 +16,7 @@ function getPasswordOptions() {
     return;
   }
 
-  if (length < 8 && length > 128) {
+  if (isNaN(length) || length < 8 || length > 128) {
     alert("Between 8 and 128!  Try again.");
     return;
   }
