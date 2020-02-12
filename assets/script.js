@@ -12,17 +12,12 @@ function getPasswordOptions() {
   var length = parseInt(prompt("Enter a number between 8 and 128"));
 
   if (isNaN(length) === true) {
-    alert("Enter a number between 8 and 128");
+    alert("Has to be an actual number!  Try again.");
     return;
   }
 
-  if (length < 8) {
-    alert("Enter a number between 8 and 128");
-    return;
-  }
-
-  if (length > 128) {
-    alert("Enter a number between 8 and 128");
+  if (length < 8 && length > 128) {
+    alert("Between 8 and 128!  Try again.");
     return;
   }
 
