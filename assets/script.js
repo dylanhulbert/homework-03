@@ -7,15 +7,6 @@ var numeric = ["1","2","3","4","5","6","7","8","9","0"];
 var special = ["!","@","#","$","%","^","&","*","(",")"];
 var passwordChar = [];
 
-// displays random element
-
-function getRandom(prand) {
-  console.log("get random values");
-  var prandIn = Math.floor(Math.random() * prand.length);
-  var prandEl = prand[prandIn];
-  return prandEl;
-}
-
 // function takes in password criteria, but first validates character length
 
 function PasswordCriteria() {
@@ -66,8 +57,19 @@ function PasswordCriteria() {
   }
 
   var finalPW = passwordChar
+  console.log("generate finalPW")
   return finalPW
 }
+
+// displays random element
+
+function getRandom(generatedPassword) {
+  console.log("get random values");
+  var prandIn = Math.floor(Math.random() * prand.length);
+  var prandEl = generatedPassword[prandIn];
+  return prandEl;
+}
+
 
 // displays the password in the text area
 
