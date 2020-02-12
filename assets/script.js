@@ -10,6 +10,7 @@ var passwordChar = [];
 // displays random element
 
 function getRandom(prand) {
+  console.log("get random values");
   var prandIn = Math.floor(Math.random() * prand.length);
   var prandEl = prand[prandIn];
   return prandEl;
@@ -18,6 +19,7 @@ function getRandom(prand) {
 // function takes in password criteria, but first validates character length
 
 function PasswordCriteria() {
+  console.log("get password criteria");
   var length = parseInt(
     prompt("length of the password: 8 - 128 characters?")
     );
@@ -63,14 +65,16 @@ function PasswordCriteria() {
   passwordChar = passwordChar.concat(special);
   }
 
-  var finalPW = ""
+  var finalPW = passwordChar
   return finalPW
 }
 
 // displays the password in the text area
 
 function writePassword() {
+  console.log("writing password");
   var generatedPassword = PasswordCriteria();
+  console.log(generatedPassword);
   var passwordText = document.querySelector("#password");
   passwordText.value = generatedPassword;
 }
